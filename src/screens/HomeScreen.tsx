@@ -123,7 +123,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
     if (!loading) return null;
     return (
       <View style={styles.loader}>
-        <ActivityIndicator size="large" color="#128C7E" />
+        <ActivityIndicator size="large" color="#FFD700" />
       </View>
     );
   };
@@ -131,7 +131,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <StatusBar
-        backgroundColor="#128C7E"
+        backgroundColor="#1A1A1A"
         barStyle="light-content"
       />
       <SearchBar
@@ -166,7 +166,8 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
           <RefreshControl
             refreshing={refreshing}
             onRefresh={handleRefresh}
-            colors={['#128C7E']}
+            colors={['#FFD700']}
+            tintColor="#FFD700"
           />
         }
       />
@@ -177,10 +178,10 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F0F2F5',
+    backgroundColor: '#1A1A1A',
   },
   listContent: {
-    paddingVertical: 8,
+    paddingVertical: 16,
   },
   loader: {
     paddingVertical: 20,

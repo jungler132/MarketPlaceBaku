@@ -52,20 +52,20 @@ const CategoryTabs: React.FC<CategoryTabsProps> = ({
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#1A1A1A',
-    paddingVertical: 12,
+    paddingVertical: 16,
   },
   scrollContent: {
-    paddingHorizontal: 12,
+    paddingHorizontal: 16,
   },
   tab: {
     paddingVertical: 12,
     paddingHorizontal: 16,
     flexDirection: 'row',
     alignItems: 'center',
-    marginHorizontal: 6,
+    marginHorizontal: 8,
     borderRadius: 12,
     backgroundColor: '#2A2A2A',
-    minWidth: 110,
+    minWidth: 120,
     justifyContent: 'center',
     gap: 8,
     borderWidth: 1,
@@ -86,14 +86,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFD700',
   },
   icon: {
-    fontSize: 22,
+    fontSize: 24,
     color: '#FFD700',
   },
   tabText: {
     color: '#FFD700',
-    fontSize: 14,
+    fontSize: 16,
     fontWeight: '600',
-    fontFamily: 'serif',
+    fontFamily: 'sans-serif',
     letterSpacing: 0.5,
     textAlign: 'center',
   },

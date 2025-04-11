@@ -23,11 +23,13 @@ function App(): React.JSX.Element {
           options={{
             title: 'Объявления',
             headerStyle: {
-              backgroundColor: '#128C7E',
+              backgroundColor: '#1A1A1A',
             },
-            headerTintColor: '#fff',
+            headerTintColor: '#FFD700',
             headerTitleStyle: {
-              fontWeight: 'bold',
+              fontWeight: '700',
+              fontFamily: 'serif',
+              fontSize: 24,
             },
           }}
         />
@@ -37,11 +39,13 @@ function App(): React.JSX.Element {
           options={{
             title: 'Просмотр объявления',
             headerStyle: {
-              backgroundColor: '#128C7E',
+              backgroundColor: '#1A1A1A',
             },
-            headerTintColor: '#fff',
+            headerTintColor: '#FFD700',
             headerTitleStyle: {
-              fontWeight: 'bold',
+              fontWeight: '700',
+              fontFamily: 'serif',
+              fontSize: 20,
             },
           }}
         />

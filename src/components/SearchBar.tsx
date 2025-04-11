@@ -44,13 +44,13 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch, onFilter, onSort }) => 
         <TextInput
           style={styles.input}
           placeholder="Поиск товаров..."
-          placeholderTextColor="#666"
+          placeholderTextColor="#FFD700"
           onChangeText={onSearch}
         />
         <TouchableOpacity
           style={styles.filterButton}
           onPress={() => setModalVisible(true)}>
-          <Text style={styles.filterButtonText}>📊</Text>
+          <Text style={styles.filterButtonText}>🔍</Text>
         </TouchableOpacity>
       </View>
 
@@ -93,6 +93,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch, onFilter, onSort }) => 
               <TextInput
                 style={styles.priceInput}
                 placeholder="От"
+                placeholderTextColor="#FFD700"
                 keyboardType="numeric"
                 value={minPrice}
                 onChangeText={setMinPrice}
@@ -101,6 +102,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch, onFilter, onSort }) => 
               <TextInput
                 style={styles.priceInput}
                 placeholder="До"
+                placeholderTextColor="#FFD700"
                 keyboardType="numeric"
                 value={maxPrice}
                 onChangeText={setMaxPrice}
@@ -131,8 +133,8 @@ const { height } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
   container: {
-    padding: 8,
-    backgroundColor: '#128C7E',
+    padding: 16,
+    backgroundColor: '#1A1A1A',
   },
   searchContainer: {
     flexDirection: 'row',
@@ -140,47 +142,53 @@ const styles = StyleSheet.create({
   },
   input: {
     flex: 1,
-    height: 40,
-    backgroundColor: '#fff',
-    borderRadius: 20,
-    paddingHorizontal: 16,
-    marginRight: 8,
+    height: 48,
+    backgroundColor: '#2A2A2A',
+    borderRadius: 24,
+    paddingHorizontal: 20,
+    marginRight: 12,
     fontSize: 16,
     fontFamily: 'sans-serif',
     letterSpacing: 0.2,
+    color: '#FFFFFF',
+    borderWidth: 1,
+    borderColor: '#FFD700',
     ...Platform.select({
       ios: {
-        shadowColor: '#000',
+        shadowColor: '#FFD700',
         shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.1,
-        shadowRadius: 2,
+        shadowOpacity: 0.2,
+        shadowRadius: 4,
       },
       android: {
-        elevation: 2,
+        elevation: 4,
       },
     }),
   },
   filterButton: {
-    width: 40,
-    height: 40,
-    backgroundColor: '#fff',
-    borderRadius: 20,
+    width: 48,
+    height: 48,
+    backgroundColor: '#2A2A2A',
+    borderRadius: 24,
     justifyContent: 'center',
     alignItems: 'center',
+    borderWidth: 1,
+    borderColor: '#FFD700',
     ...Platform.select({
       ios: {
-        shadowColor: '#000',
+        shadowColor: '#FFD700',
         shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.1,
-        shadowRadius: 2,
+        shadowOpacity: 0.2,
+        shadowRadius: 4,
       },
       android: {
-        elevation: 2,
+        elevation: 4,
       },
     }),
   },
   filterButtonText: {
-    fontSize: 18,
+    fontSize: 20,
+    color: '#FFD700',
   },
   modalContainer: {
     flex: 1,
@@ -193,18 +201,20 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     bottom: 0,
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    backgroundColor: 'rgba(0, 0, 0, 0.7)',
   },
   modalContent: {
-    backgroundColor: '#fff',
+    backgroundColor: '#1A1A1A',
     borderRadius: 24,
-    padding: 20,
+    padding: 24,
     width: '90%',
     maxWidth: 400,
     maxHeight: '80%',
+    borderWidth: 1,
+    borderColor: '#FFD700',
     ...Platform.select({
       ios: {
-        shadowColor: '#000',
+        shadowColor: '#FFD700',
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.25,
         shadowRadius: 4,
@@ -215,18 +225,18 @@ const styles = StyleSheet.create({
     }),
   },
   modalTitle: {
-    fontSize: 22,
-    fontWeight: '600',
+    fontSize: 24,
+    fontWeight: '700',
     marginBottom: 24,
     textAlign: 'center',
-    color: '#1a1a1a',
+    color: '#FFFFFF',
     fontFamily: 'serif',
     letterSpacing: 0.5,
   },
   sectionTitle: {
-    fontSize: 16,
-    fontWeight: '600',
-    color: '#1a1a1a',
+    fontSize: 18,
+    fontWeight: '700',
+    color: '#FFFFFF',
     marginBottom: 12,
     fontFamily: 'serif',
     letterSpacing: 0.3,
@@ -241,71 +251,78 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     paddingVertical: 8,
     borderRadius: 20,
-    backgroundColor: '#f5f5f5',
+    backgroundColor: '#2A2A2A',
     marginRight: 8,
     marginBottom: 8,
+    borderWidth: 1,
+    borderColor: '#FFD700',
   },
   sortOptionSelected: {
-    backgroundColor: '#128C7E',
+    backgroundColor: '#FFD700',
   },
   sortOptionText: {
-    color: '#666',
+    color: '#FFD700',
     fontSize: 14,
     fontFamily: 'sans-serif',
+    fontWeight: '500',
     letterSpacing: 0.2,
   },
   sortOptionTextSelected: {
-    color: '#fff',
+    color: '#000000',
     fontWeight: '600',
   },
   inputContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     marginBottom: 24,
+    gap: 12,
   },
   priceInput: {
     flex: 1,
     height: 48,
-    borderWidth: 1,
-    borderColor: '#E0E0E0',
+    backgroundColor: '#2A2A2A',
     borderRadius: 12,
     paddingHorizontal: 16,
     fontSize: 16,
-    backgroundColor: '#f9f9f9',
+    color: '#FFFFFF',
     fontFamily: 'sans-serif',
-    letterSpacing: 0.2,
+    borderWidth: 1,
+    borderColor: '#FFD700',
   },
   separator: {
-    marginHorizontal: 12,
+    color: '#FFD700',
     fontSize: 20,
-    color: '#666',
-    fontFamily: 'serif',
+    fontWeight: '600',
   },
   buttonContainer: {
     flexDirection: 'row',
+    justifyContent: 'space-between',
     gap: 12,
   },
   button: {
     flex: 1,
-    padding: 16,
+    height: 48,
     borderRadius: 12,
+    justifyContent: 'center',
     alignItems: 'center',
   },
   cancelButton: {
-    backgroundColor: '#f5f5f5',
+    backgroundColor: '#2A2A2A',
+    borderWidth: 1,
+    borderColor: '#FFD700',
   },
   applyButton: {
-    backgroundColor: '#128C7E',
+    backgroundColor: '#FFD700',
   },
   cancelButtonText: {
-    color: '#666',
+    color: '#FFD700',
     fontSize: 16,
     fontWeight: '600',
     fontFamily: 'sans-serif',
     letterSpacing: 0.2,
   },
   applyButtonText: {
-    color: '#fff',
+    color: '#000000',
     fontSize: 16,
     fontWeight: '600',
     fontFamily: 'sans-serif',
